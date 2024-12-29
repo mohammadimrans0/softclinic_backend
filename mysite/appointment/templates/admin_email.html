@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+            color: #333333;
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666666;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Your Appointment is Running</h1>
+        </div>
+        <div class="content">
+            <p>Hi {{ patient.first_name }} {{ patient.last_name }},</p>
+            <p>Your appointment with Dr. {{ doctor.first_name }} {{ doctor.last_name }} is currently running.</p>
+            <p>Click on the below link to join the appointment</p>
+            <p>Meet link : <a href="{{doctor.meet_link}}" target="_blank">{{doctor.meet_link}}</a></p>
+            <p>Thank you for using our services. If you have any questions, feel free to contact us.</p>
+            <p>Best regards,<br>The SoftClinic Team</p>
+        </div>
+        <div class="footer">
+            <p>All rights reserved | SoftClinic</p>
+            <p><a href="/">Privacy Policy</a> | <a href="/">Terms of Service</a></p>
+        </div>
+    </div>
+</body>
+</html>
